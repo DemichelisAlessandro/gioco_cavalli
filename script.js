@@ -1,4 +1,4 @@
-function onload(){
+/*function onload(){
     let rand = 0;
     let cont = 0;
     let trovato = 0;
@@ -47,4 +47,4 @@ var div7 = document.getElementById("7");
 
 
 
-var vettore = [];
+var vettore = [];*/

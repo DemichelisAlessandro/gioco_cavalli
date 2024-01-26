@@ -48,3 +48,34 @@ var div7 = document.getElementById("7");
 
 
 var vettore = [];*/
+
+document.addEventListener("DOMContentLoaded", function() {
+    const showTableButton = document.getElementById("show-table-button");
+    const cardsContainer = document.getElementById("cards-container");
+    const tableWrapper = document.getElementById("table-wrapper");
+
+    showTableButton.addEventListener("click", function() {
+        cardsContainer.style.display = "flex";
+        tableWrapper.style.display = "flex";
+        createDynamicTable(7, 4);
+    });
+
+    function createDynamicTable(rows, cols) {
+        let tableHTML = "<table class='game-table'>";
+        for (let i = 0; i < rows; i++) {
+            tableHTML += "<tr>";
+            for (let j = 0; j < cols; j++) {
+                if (i < 7 && i > 5 && j < 4) {
+                    tableHTML += "<td><img src='../gioco_cavalli-main/Immagini Carte/RE" + (j + 1) + ".gif' alt='Image " + (j + 1) + "'></td>";
+                } else {
+                    tableHTML += "<td></td>";
+                }
+            }
+            tableHTML += "</tr>";
+        }
+        tableHTML += "</table>";
+        document.getElementById("dynamic-table").innerHTML = tableHTML;
+    }
+});
+
+

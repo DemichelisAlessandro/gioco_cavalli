@@ -53,10 +53,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const showTableButton = document.getElementById("show-table-button");
     const cardsContainer = document.getElementById("cards-container");
     const tableWrapper = document.getElementById("table-wrapper");
+    const drawPileImage = document.getElementById("draw-pile-image");
 
     showTableButton.addEventListener("click", function() {
         cardsContainer.style.display = "flex";
         tableWrapper.style.display = "flex";
+        
         createDynamicTable(7, 4);
     });
 
@@ -77,5 +79,4 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("dynamic-table").innerHTML = tableHTML;
     }
 });
-
 

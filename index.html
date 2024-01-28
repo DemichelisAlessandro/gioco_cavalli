@@ -4,43 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercizio di Demi e Firas</title>
-    <script src="script.js"></script>
+    <title>Gioco delle Scommesse sul Seme della Carta</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tabella del Gioco</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+    <h1>Gioco delle Scommesse sul Seme della Carta</h1>
+    <div class="container">
         <button id="show-table-button">Inizia Gioco</button>
 
-        <div class="container">
-            <div class="cards" id="cards-container">
-                <div class="card">1</div>
-                <div class="card">2</div>
-                <div class="card">3</div>
-                <div class="card">4</div>
-                <div class="card">5</div>
-                <div class="card">6</div>
-                <div class="card">7</div>
-            </div>
-            <div class="table-wrapper" id="table-wrapper" style="display: none;">
-                <div id="dynamic-table"></div>
-                <div class="draw-pile" id="draw-pile-image">
-                    <img src="../gioco_cavalli-main/Immagini Carte/dorso.JPG" alt="Draw Pile Image" id="draw-pile-image">
-                </div>
-            </div>
+        <div class="cards" id="cards-container">
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <div class="card">4</div>
+            <div class="card">5</div>
+            <div class="card">6</div>
+            <div class="card">7</div>
         </div>
-    <form action="server.php" method="POST" enctype="multipart/form-data">
+        <div class="table-wrapper" id="table-wrapper" style="display: none;">
+            <div id="dynamic-table"></div>
+            <form id="scommessa-form">
+                <label for="scommessa">Scegli un seme (Cuori, Quadri, Fiori, Picche):</label><br>
+                <input type="text" id="scommessa" name="scommessa"><br><br>
+                <input type="button" value="Scommetti" onclick="inviaScommessa()">
+            </form>
+            <div class="draw-pile" id="draw-pile-image">
+                <img src="../gioco_cavalli-main/Immagini Carte/dorso.JPG" alt="Draw-Pile-Image" id="draw-pile-image">
+            </div>
+            <div id="risultato"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function inviaScommessa() {
+            var formData = new FormData(document.getElementById("scommessa-form"));
 
-        <input type="submit" value="PESCA">
-    </form>
-    
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "server.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Ottieni il percorso dell'immagine dalla risposta del server
+                    var percorsoImmagine = xhr.responseText;
+
+                    // Aggiorna l'attributo src dell'immagine nel div draw-pile
+                    document.getElementById("draw-pile-image").getElementsByTagName("img")[0].src = percorsoImmagine;
+                }
+            };
+            xhr.send(formData);
+        }
+
+
+
+
+    </script>
 </body>
 </html>

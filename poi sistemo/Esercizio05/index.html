@@ -22,22 +22,58 @@
 
     <body>
 
-        <h1>Registrazione</h1>
-
+    <table border="1">
+    <tr>
+        <td>vincitore</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>?</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>?</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>?</td>
+        <td>fiori</td>
+        <td>quadri</td>
+        <td>cuori</td>
+        <td>picche</td>
+    </tr>
+    
+    </table>
+        <p>
+            su chi scommetti? se non si scommette viene messo di default picche (poi sistemo)
+        </p>
         <form action="" id="frmRegistrazione">
+            <input type='hidden' id='vin' name='vin' placeholder='Inserisci il Cognome/Nome' value="" />
+            <input type="text" id="sco" name="sco" placeholder="picche/cuori/quadri/fiori" value=""/>
 
             <p>
-                <span>Nominativo:</span>
-                <input type="text" id="txtNominativo" name="txtNominativo" placeholder="Inserisci il Cognome/Nome" value=""/>
+
+                <input type="hidden" id="txtNominativo" name="txtNominativo" placeholder="Inserisci il Cognome/Nome" value=""/>
             </p>
                 
                 <p>
-                <span>vet:</span>
-                    <input type='text' id='evto' name='veto' placeholder='Inserisci il Cognome/Nome' value="" />
+
+                    <input type='hidden' id='evto' name='veto' placeholder='Inserisci il Cognome/Nome' value="" />
                 </p>
 
             <p>
-                <input type="button" value="CONFERMA" id="btnConferma" />
+                <input type="button" value="pesca" id="btnConferma" />
             </p>
 
         </form>

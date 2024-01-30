@@ -1,3 +1,39 @@
 body {
-    background-color: red;/*il rosso tiene svegli*/
+    background-color: #f0f0f0; /* Colore di sfondo grigio chiaro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Rimuove il margine predefinito del body */
+    font-family: Arial, sans-serif; /* Imposta un tipo di carattere di base */
+}
+
+.container {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff; /* Sfondo bianco */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Stile per i paragrafi */
+p {
+    margin-bottom: 12px;
+    color: #333; /* Colore del testo più scuro */
+}
+
+/* Stile per il pulsante */
+#btnConferma {
+    padding: 10px 20px;
+    background-color: #007bff; /* Colore di sfondo blu */
+    color: #fff; /* Testo bianco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Effetto hover per il pulsante */
+#btnConferma:hover {
+    background-color: #0056b3; /* Sfondo blu più scuro al passaggio del mouse */
 }

@@ -1,61 +1,94 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gioco delle Scommesse sul Seme della Carta</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Gioco delle Scommesse sul Seme della Carta</h1>
-    <div class="container">
-        <button id="show-table-button">Inizia Gioco</button>
 
-        <div class="cards" id="cards-container">
-            <div class="card">1</div>
-            <div class="card">2</div>
-            <div class="card">3</div>
-            <div class="card">4</div>
-            <div class="card">5</div>
-            <div class="card">6</div>
-            <div class="card">7</div>
-        </div>
-        <div class="table-wrapper" id="table-wrapper" style="display: none;">
-            <div id="dynamic-table"></div>
-            <form id="scommessa-form">
-                <label for="scommessa">Scegli un seme (Cuori, Quadri, Fiori, Picche):</label><br>
-                <input type="text" id="scommessa" name="scommessa"><br><br>
-                <input type="button" value="Scommetti" onclick="inviaScommessa()">
-            </form>
-            <div class="draw-pile" id="draw-pile-image">
-                <img src="../gioco_cavalli-main/Immagini Carte/dorso.JPG" alt="Draw-Pile-Image" id="draw-pile-image">
-            </div>
-            <div id="risultato"></div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <script>
-        function inviaScommessa() {
-            var formData = new FormData(document.getElementById("scommessa-form"));
+    <head>
+        <title>corsa cavalli</title>
+        <meta charset="UTF-8">
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "server.php", true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Ottieni il percorso dell'immagine dalla risposta del server
-                    var percorsoImmagine = xhr.responseText;
+        <!-- Fogli Stile utilizzati-->
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
 
-                    // Aggiorna l'attributo src dell'immagine nel div draw-pile
-                    document.getElementById("draw-pile-image").getElementsByTagName("img")[0].src = percorsoImmagine;
-                }
-            };
-            xhr.send(formData);
-        }
+        <!-- JavaScript Esterni alla Pagina -->
+            <script type="text/javascript" src="JS/JQuery371.js"></script>
+    <script type="text/javascript" src="JS/script.js"></script>
+
+        <!-- JavaScript Interni alla Pagina -->
+        <script type="text/javascript">
+
+        </script>
 
 
+    </head>
+
+    <body>
+        <p>
+            su chi scommetti?
+        </p>
+        <form action="" id="frmRegistrazione">
+            <input type='hidden' id='vin' name='vin' placeholder='Inserisci il Cognome/Nome' value="" />
+                 <select name="sco">
+                    <option value="fiori">fiori</option>
+                    <option value="cuori">cuori</option>
+                    <option value="quadri">quadri</option>
+                    <option value="picche">picche</option>
+                </select>
+
+            <p>
+
+                <input type="hidden" id="txtNominativo" name="txtNominativo" placeholder="Inserisci il Cognome/Nome" value=""/>
+                <input type='hidden' id='bruh' name='bruh' placeholder='Inserisci il Cognome/Nome' value='' />
+            </p>
+                
+                <p>
+
+                    <input type='hidden' id='evto' name='veto' placeholder='Inserisci il Cognome/Nome' value="" />
+                </p>
+
+            <p>
+                <input type="button" value="pesca" id="btnConferma" />
+            </p>
+
+        </form>
+
+        <br/>
 
 
-    </script>
-</body>
-</html>
+        <table border="1">
+        <tr>
+            <td>vincitore</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><img src='IMG/dorso.JPG' /></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td><img src='IMG/dorso.JPG' /></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td><img src="IMG/dorso.JPG" /></td>
+            <td><img src='IMG/RE1.gif' /></td>
+            <td><img src='IMG/RE2.gif' /></td>
+            <td><img src='IMG/RE3.gif' /></td>
+            <td><img src='IMG/RE4.gif' /></td>
+        </tr>
+    
+        </table>
+        
+
+    </body>
+
+
+    </html>

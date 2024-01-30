@@ -1,7 +1,7 @@
 <html lang="it">
 
 <head>
-    <title>Esercizio 4 PHP - Massimo di 3 Numeri</title>
+    <title>corsa cavalli</title>
     <meta charset="UTF-8" />
 
     <script type="text/javascript" src="JS/JQuery371.js"></script>
@@ -20,7 +20,7 @@
 <body>
 
 
-
+    <button onclick="window.location.href='index.html?'" class="bt">Ricomincia</button>---
     <?php
 
     $ripetuto = true;//serve a controllare se la carta è già stata pescata quando pesco una nuova carta
@@ -267,13 +267,14 @@
 
             </form>
                 <p>
-                    ultima carta pescata: <img src='IMG/$stringa3.gif' />
+                    ---|ultima carta pescata:
+                </p>
+<img src='IMG/$stringa3.gif' />|
+                <p>
+                    ---|hai scommesso su:$scommessa|---
                 </p>
                 <p>
-                    hai scommesso su:$scommessa
-                </p>
-                <p>
-                    ha vinto: $vittoria
+                    |ha vinto: $vittoria|---
                 </p>
         ";
 

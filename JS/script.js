@@ -5,7 +5,7 @@ $(document).ready(function () {
     $("#btnConferma").on("click", function () {
         if (_vin.val() == "") {
             _frmRegistrazione.prop("method", "GET");
-            _frmRegistrazione.prop("action", "registrazione.php");
+            _frmRegistrazione.prop("action", "script.php");
             _frmRegistrazione.submit();
         }
 
